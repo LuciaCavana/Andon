@@ -1,0 +1,46 @@
+var sql = require('mssql/msnodesqlv8');
+const dotenv = require("dotenv")
+dotenv.config({path:".env"})
+var DATABASE = process.env.DATABASE_URL  
+QUERY = "insert into MecanizadoLog(Fecha_Hora, Ip,Evento,Recurso,Producto,Operacion,Operario,Inicio_Raspberry,Fin_Raspberry) VALUES ("
+
+Conectar()
+
+var dbConfig = {
+  driver: 'msnodesqlv8',  
+  server: "localhost",
+  database: "AndonTesting",
+  options: {
+    trustedConnection: true
+},
+debug: true,
+parseJSON: true
+}; 
+
+
+
+
+function Insert_logs(objet){
+
+  
+}
+function Conectar(){
+  
+sql.connect(dbConfig, function (err) {
+  if (err) { console.log(JSON.stringify(err)+'..............') }
+  else {
+    console.log("Conexión establecida")
+    new sql.Request().query('select * from Eventos', (err, result) => {
+      console.log("Aguarde por favor...");
+      if(err) { 
+        console.log("Motivo de error: "+ err);
+      } else {
+        console.dir(result.recordset);
+      };
+    });
+  }
+}
+);
+}
+
+  
