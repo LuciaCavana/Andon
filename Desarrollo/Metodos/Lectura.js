@@ -7,7 +7,6 @@ Faltante:
 2- Guardar los datos en el DataBase
 
 */
-const { app, BrowserWindow } = require('electron')
 const readline = require('readline');
 const fs = require('fs');
 
