@@ -38,8 +38,11 @@ function Insert_logs(query,IniFecha,FinFecha,MecLog,line, count){
         GuardarLog("Formato de log no generado || linea: "+count+" || Log: "+line+"\nObjeto\n"+MecLog.Mostrar());
       }
       else{
-        console.log("Ingresado Correctamente");
         nullFecha(IniFecha,FinFecha)
+        
+        console.log("Ingresado Correctamente");
+
+        return true
       }
     });
   
@@ -47,14 +50,18 @@ function Insert_logs(query,IniFecha,FinFecha,MecLog,line, count){
 }
 
 function nullFecha(IniFecha,FinFecha){
+  ini=true
+  fin=true
   if(IniFecha = true){
     new sql.Request().query(
       "update MecanizadoLog set Inicio_Raspberry = null where Inicio_Raspberry = '1900-01-01 00:00:00.000'",  //String de la Query
         (err, result) => {
       if(err) { 
         console.log("Motivo de error: "+ err);
+        ini=false
       }
       else{
+        ini=true
         //console.log("Ingresado Correctamente");
       }
     });
@@ -65,25 +72,37 @@ function nullFecha(IniFecha,FinFecha){
         (err, result) => {
       if(err) { 
         console.log("Motivo de error: "+ err);
+        fin=false
       }
       else{
+        ini = true
         //console.log("Ingresado Correctamente");
       }
     });
   }
 }
 
-module.exports = function Conectar(MecLog,IniFecha,FinFecha,line, count){
+/*module.exports = function Conectar(MecLog,IniFecha,FinFecha,line, count){
   sql.connect(config, function (err) {
-    if (err) { console.log(JSON.stringify(err)+'..............') }
+    if (err) { console.log(JSON.stringify(err)+'..............') 
+    return false}
     else {
       try{
-        Insert_logs(GeneretQuery(MecLog),IniFecha,FinFecha,MecLog,line,count)
+        console.log(MecLog)
+         estado= Insert_logs(GeneretQuery(MecLog),IniFecha,FinFecha,MecLog,line,count)
+         console.log(estado)
+         return estado
       }
       catch(err){
         console.log("Error" +'\n'+MecLog)
+        return false
       }
     }
   }
   );
+}*/
+
+
+module.exports = function Conectar(MecLog,IniFecha,FinFecha,line, count){
+  return true
 }

@@ -1,0 +1,42 @@
+{'2023-03-11':4}
+{'2023-03-12':2}
+{'2023-03-13':0}
+
+
+
+if (lineCount > c) {
+                    console.log("entro")
+                    if(!line.match("Connected")){
+                        console.log("No es connected")
+                        if( !line.match("Application start")){
+                            console.log("No es application start")
+                            /*Separamos en dos string el log, donde en el primer lado tendremos la parte donde las separaciones
+                                No estan hechas con , */
+                                
+                                /*Remplazamos todos los espacios por una coma, despues sacamos los corchetes y 
+                                por ultimo remplazamos las comas que separan la fecha de la hora*/
+                                
+                                
+                                string = line.substring(0,66).replace(/ /g,",")
+                                string = string.substr(0,11).replace("[","")+" "+ string.substr(11+1).replace("]","")
+                                string = string.substr(0,51)+" "+ string.substr(52).replace(","," ")
+                                
+                                /*Aca dejamos la segunda parte de la linea, con la cual no haremos nada */
+                                string2 = line.substring(66)
+                                
+                                //Unimos la primera parte ya acabada con la segunda
+                                string = string + string2
+                                
+                                aMecanizado = string.split(",")
+                                
+                                salir= FuncionEvent.EventDetect(aMecanizado[3],aMecanizado,string,lineCount)
+                               console.log(salir)   
+                            }
+                            else{
+                                salir=true
+                            }
+                        }
+                        else{
+                            salir=true
+                        }            
+                    }                      
