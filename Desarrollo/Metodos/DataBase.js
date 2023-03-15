@@ -13,7 +13,7 @@ function GuardarLog(string){
 //Conectar()
 
 function GeneretQuery(MecLog){
-  QUERY = "insert into MecanizadoLog(Fecha_Hora, Ip,Evento,Recurso,Producto,Operacion,Operario,Inicio_Raspberry,Fin_Raspberry,idEvento) VALUES ("
+  QUERY = "insert into MecanizadoLog(Fecha_Hora, Ip,Evento,Recurso,Producto,Operacion,Operario,Inicio_Raspberry,Fin_Raspberry,IdEvento) VALUES ("
 
   QUERY+="'" + MecLog.getFecha_Hora() + "','"
   QUERY+=MecLog.getIp() + "','"
@@ -24,7 +24,7 @@ function GeneretQuery(MecLog){
   QUERY+=MecLog.getOperario() + "','"
   QUERY+=MecLog.getInicio_Rasberry() + "','"
   QUERY+=MecLog.getFin_Rasberry() +"',"+
-  "(select id_Evento from Eventos where Evento ='"+MecLog.getEvento()+"')"+")"
+  "(select Id_Evento from Eventos where Evento ='"+MecLog.getEvento()+"')"+")"
   
   return QUERY
 }
@@ -38,7 +38,8 @@ function Insert_logs(query,IniFecha,FinFecha,MecLog,line, count){
         GuardarLog("Formato de log no generado || linea: "+count+" || Log: "+line+"\nObjeto\n"+MecLog.Mostrar());
       }
       else{
-        console.log("Ingresado Correctamente");
+        const date = new Date().toISOString().substr(0,20)
+        console.log("Ingresado Correctamente: "+date);
         nullFecha(IniFecha,FinFecha)
       }
     });
@@ -74,14 +75,15 @@ function nullFecha(IniFecha,FinFecha){
 }
 
 module.exports = function Conectar(MecLog,IniFecha,FinFecha,line, count){
+ 
   sql.connect(config, function (err) {
     if (err) { console.log(JSON.stringify(err)+'..............') }
     else {
       try{
-        Insert_logs(GeneretQuery(MecLog),IniFecha,FinFecha,MecLog,line,count)
+       Insert_logs(GeneretQuery(MecLog),IniFecha,FinFecha,MecLog,line,count)
       }
       catch(err){
-        console.log("Error" +'\n'+MecLog)
+        console.log("Error" +'\n'+err)
       }
     }
   }

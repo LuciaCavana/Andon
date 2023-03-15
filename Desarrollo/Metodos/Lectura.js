@@ -1,54 +1,18 @@
-/*
-Realizado:
-1- Lectura en tiempo real sin que se vuelvan a leer lineas anteriores
 
-Faltante:
-1- Hacer la separacion de campos de forma correcta.
-2- Guardar los datos en el DataBase
-
-*/
 const readline = require('readline');
 const fs = require('fs');
 
 var FuncionEvent = require('./FuncionEvent');
-const {setInterval} = require('timers')
+var line = require('./Line')
+
+
 
 pos = 11
 pos2 = 51
-tLine = getFirstLineAsNumber()
 
-//Obtener la fecha del sistema en el formato deseado
-fecha = '2023-03-09'
-
-//Crea la URL junto al nombre del archivo a leer (la fecha del dia)
-const URL = "U:/Sistemas/Logs/";
-//const URL = "C:/Users/lcavana/OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL/Documentos/TOTVS/Andon/Logs/";
-
-function GuardarLinea(nNum){
-    const fs = require('fs');
-
-    const filename = 'C:/Users/lcavana/OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL/Documentos/TOTVS/Andon/Desarrollo/File/FileNumLine.txt';
-    const data = nNum;
-
-
-    fs.writeFile(filename, data.toString(), { flag: 'w' }, function (err) {
-    if (err) {
-        console.error(err);
-    }
-    });
-
-}
-
-function getFirstLineAsNumber() {
-    const filename = 'C:/Users/lcavana/OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL/Documentos/TOTVS/Andon/Desarrollo/File/FileNumLine.txt';
-    const data = fs.readFileSync(filename, 'utf-8').split('\n')[0];
-    const number = Number(data);
-    return number;
-}
 //FUNCION LECTURA DE LOGS 
 
-function LecturaLogs(url){
-    
+function LecturaLogs(url,tline){
     
     c = tLine
     // Abre un stream de lectura para el archivo
@@ -91,8 +55,8 @@ function LecturaLogs(url){
 
                             aMecanizado = string.split(",")
                             
-                            
-                            FuncionEvent.EventDetect(aMecanizado[3],aMecanizado,string,lineCount)
+                            //console.log(aMecanizado)
+                           FuncionEvent.EventDetect(aMecanizado[3],aMecanizado,string,lineCount)
                         
                     }
                 }            
@@ -100,7 +64,9 @@ function LecturaLogs(url){
             //Guarda en tLine la ultima linea
             tLine = lineCount
         });
-        GuardarLinea(tLine)
+        
+        line.GuardarLinea(tLine)
+
         readInterface.on('error', function(error) {
             console.error(error);
         });
@@ -108,20 +74,6 @@ function LecturaLogs(url){
           });
 }
 
-//Funcion de inicio que va a ser llamada cada segundo
-function Inicio(){
-    hoy = new Date().toISOString().substr(0,10)  
-    if(fecha == hoy){
-        LecturaLogs(URL+fecha+".log") 
-    }
-    else{
-        GuardarLinea(0)
-        fecha = hoy
-    }
+module.exports = {
+    LecturaLogs
 }
-
-
-setInterval(Inicio,1000)
-
-console.log("El programa esta en ejecucion")
-

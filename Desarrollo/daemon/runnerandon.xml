@@ -1,0 +1,31 @@
+<service>
+	<id>runnerandon.exe</id>
+	<name>RunnerAndon</name>
+	<description>Iniciar lector de logs</description>
+	<executable>C:\Program Files\nodejs\node.exe</executable>
+	<argument>--harmony</argument>
+	<argument>C:\Users\lcavana\OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL\Documentos\TOTVS\Andon\Desarrollo\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>--file</argument>
+	<argument>C:\Users\lcavana\OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL\Documentos\TOTVS\Andon\Desarrollo\main.js</argument>
+	<argument>--scriptoptions=</argument>
+	<argument>--log</argument>
+	<argument>RunnerAndon wrapper</argument>
+	<argument>--grow</argument>
+	<argument>0.25</argument>
+	<argument>--wait</argument>
+	<argument>1</argument>
+	<argument>--maxrestarts</argument>
+	<argument>3</argument>
+	<argument>--abortonerror</argument>
+	<argument>n</argument>
+	<argument>--stopparentfirst</argument>
+	<argument>undefined</argument>
+	<logmode>rotate</logmode>
+	<stoptimeout>30sec</stoptimeout>
+	<serviceaccount>
+		<domain>LCAVANA</domain>
+		<user>LocalSystem</user>
+		<password></password>
+	</serviceaccount>
+	<workingdirectory>C:\Users\lcavana\OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL\Documentos\TOTVS\Andon\Desarrollo</workingdirectory>
+</service>

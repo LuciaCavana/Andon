@@ -1,0 +1,2 @@
+2023-03-15 12:49:33 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\lcavana\OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL\Documentos\TOTVS\Andon\Desarrollo\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\lcavana\OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL\Documentos\TOTVS\Andon\Desarrollo\main.js" --scriptoptions= --log "RunnerAndon wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-03-15 12:49:33 - Started 26180

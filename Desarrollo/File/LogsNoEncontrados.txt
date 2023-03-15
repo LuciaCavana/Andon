@@ -1,0 +1,37 @@
+Formato de log no generado || 40 || Log: 2023-03-15 09:58:02,192.168.24.55:39226:,03:05.534 
+Formato de log no generado || 40 || Log: 2023-03-15 09:58:02,192.168.24.55:39226:,03:05.534 
+Formato de log no generado || linea: 39 || Log: 2023-03-15 09:58:02,192.168.24.55:39226:,2021-07-08 09:03:05.534,CYCLE_END,ME855,28019-00-010,1576,2021-07-08 08:07:13.859,2021-07-08 09:
+Objeto
+Fecha y Hora: 2023-03-15T09:58:02
+ Ip: 192.168.24.55:39226:
+ Evento: CYCLE_END
+ Recurso: ME855
+ Producto: 28019-00
+ Operacion: 010
+ Operario: 1576
+ Inicio_Rasberry: 2021-07-08T08:07:13.859
+ Fin_Rasberry: 2021-07-08T09:
+Formato de log no generado || 40 || Log: 2023-03-15 09:58:02,192.168.24.55:39226:,03:05.534 
+Formato de log no generado || linea: 39 || Log: 2023-03-15 09:58:02,192.168.24.55:39226:,2021-07-08 09:03:05.534,CYCLE_END,ME855,28019-00-010,1576,2021-07-08 08:07:13.859,2021-07-08 09:
+Objeto
+Fecha y Hora: 2023-03-15T09:58:02
+ Ip: 192.168.24.55:39226:
+ Evento: CYCLE_END
+ Recurso: ME855
+ Producto: 28019-00
+ Operacion: 010
+ Operario: 1576
+ Inicio_Rasberry: 2021-07-08T08:07:13.859
+ Fin_Rasberry: 2021-07-08T09:
+Formato de log no generado || 91 || Log: 2023-03-15 09:58:02,192.168.24.55:39226:,03:05.534 
+Formato de log no generado || linea: 90 || Log: 2023-03-15 09:58:02,192.168.24.55:39226:,2021-07-08 09:03:05.534,CYCLE_END,ME855,28019-00-010,1576,2021-07-08 08:07:13.859,2021-07-08 09:
+Objeto
+Fecha y Hora: 2023-03-15T09:58:02
+ Ip: 192.168.24.55:39226:
+ Evento: CYCLE_END
+ Recurso: ME855
+ Producto: 28019-00
+ Operacion: 010
+ Operario: 1576
+ Inicio_Rasberry: 2021-07-08T08:07:13.859
+ Fin_Rasberry: 2021-07-08T09:

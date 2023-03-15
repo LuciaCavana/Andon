@@ -35,7 +35,7 @@ function EventDetect(event, aArray,line,count) {
             FinFecha = true
             DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
-            case 'CYCLE_END':
+        case 'CYCLE_END':
             //2022-11-15 07:20:18,192.168.24.50:57724:,2021-10-26 10:27:53.804,CYCLE_END,ME853,91138-20,1709,2021-10-26 10:20:13.881,2021-10-26 10:27:53.803
             
             MecLog.setFecha_Hora(aArray[0].replace(" ","T"))
