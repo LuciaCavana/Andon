@@ -1,2 +1,32 @@
 2023-03-15 12:49:33 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\lcavana\OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL\Documentos\TOTVS\Andon\Desarrollo\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\lcavana\OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL\Documentos\TOTVS\Andon\Desarrollo\main.js" --scriptoptions= --log "RunnerAndon wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2023-03-15 12:49:33 - Started 26180
+2023-03-15 14:16:53 - Stopping runnerandon.exe
+2023-03-15 14:16:53 - ProcessKill 26180
+2023-03-15 14:16:54 - Found child process: 11116 Name: conhost.exe
+2023-03-15 14:16:54 - Found child process: 25476 Name: node.exe
+2023-03-15 14:16:54 - Stopping process 11116
+2023-03-15 14:16:54 - Send SIGINT 11116
+2023-03-15 14:16:54 - SIGINT to 11116 failed - Killing as fallback
+2023-03-15 14:16:54 - Stopping process 25476
+2023-03-15 14:16:54 - Send SIGINT 25476
+2023-03-15 14:16:54 - SIGINT to 25476 failed - Killing as fallback
+2023-03-15 14:16:54 - Stopping process 26180
+2023-03-15 14:16:54 - Send SIGINT 26180
+2023-03-15 14:16:54 - SIGINT to 26180 failed - Killing as fallback
+2023-03-15 14:16:54 - Finished runnerandon.exe
+2023-03-15 15:10:32 - Starting C:\Program Files\nodejs\node.exe  --harmony "C:\Users\lcavana\OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL\Documentos\TOTVS\Andon\Desarrollo\node_modules\node-windows\lib\wrapper.js" --file "C:\Users\lcavana\OneDrive - 158282_158283_TENANT_DELTA_COMPRESION_SRL\Documentos\TOTVS\Andon\Desarrollo\main.js" --scriptoptions= --log "RunnerAndon wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2023-03-15 15:10:32 - Started 30188
+2023-03-15 15:10:42 - Stopping runnerandon.exe
+2023-03-15 15:10:42 - ProcessKill 30188
+2023-03-15 15:10:42 - Found child process: 32048 Name: conhost.exe
+2023-03-15 15:10:42 - Found child process: 7688 Name: node.exe
+2023-03-15 15:10:42 - Stopping process 32048
+2023-03-15 15:10:42 - Send SIGINT 32048
+2023-03-15 15:10:42 - SIGINT to 32048 failed - Killing as fallback
+2023-03-15 15:10:42 - Stopping process 7688
+2023-03-15 15:10:42 - Send SIGINT 7688
+2023-03-15 15:10:42 - SIGINT to 7688 failed - Killing as fallback
+2023-03-15 15:10:42 - Stopping process 30188
+2023-03-15 15:10:42 - Send SIGINT 30188
+2023-03-15 15:10:42 - SIGINT to 30188 failed - Killing as fallback
+2023-03-15 15:10:42 - Finished runnerandon.exe
