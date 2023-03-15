@@ -43,9 +43,9 @@ var svc = new Service({
 });
 
 // Escucha cuando se instala el servicio
-svc.on('install',function(){
+svc.on('runner',function(){
   svc.start();
 });
 
 // Instala el servicio
-svc.install();
+svc.runner();
