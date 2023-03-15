@@ -67,6 +67,4 @@ function prueba2(fecha){
 module.exports = {
     GuardarLinea,
     getFirstLineAsNumber,
-    prueba,
-    prueba2,
 }

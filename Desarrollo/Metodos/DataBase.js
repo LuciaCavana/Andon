@@ -13,7 +13,7 @@ function GuardarLog(string){
 //Conectar()
 
 function GeneretQuery(MecLog){
-  QUERY = "insert into MecanizadoLog(Fecha_Hora, Ip,Evento,Recurso,Producto,Operacion,Operario,Inicio_Raspberry,Fin_Raspberry,idEvento) VALUES ("
+  QUERY = "insert into MecanizadoLog(Fecha_Hora, Ip,Evento,Recurso,Producto,Operacion,Operario,Inicio_Raspberry,Fin_Raspberry,IdEvento) VALUES ("
 
   QUERY+="'" + MecLog.getFecha_Hora() + "','"
   QUERY+=MecLog.getIp() + "','"
@@ -24,7 +24,7 @@ function GeneretQuery(MecLog){
   QUERY+=MecLog.getOperario() + "','"
   QUERY+=MecLog.getInicio_Rasberry() + "','"
   QUERY+=MecLog.getFin_Rasberry() +"',"+
-  "(select id_Evento from Eventos where Evento ='"+MecLog.getEvento()+"')"+")"
+  "(select Id_Evento from Eventos where Evento ='"+MecLog.getEvento()+"')"+")"
   
   return QUERY
 }
@@ -38,11 +38,9 @@ function Insert_logs(query,IniFecha,FinFecha,MecLog,line, count){
         GuardarLog("Formato de log no generado || linea: "+count+" || Log: "+line+"\nObjeto\n"+MecLog.Mostrar());
       }
       else{
+        const date = new Date().toISOString().substr(0,20)
+        console.log("Ingresado Correctamente: "+date);
         nullFecha(IniFecha,FinFecha)
-        
-        console.log("Ingresado Correctamente");
-
-        return true
       }
     });
   
@@ -50,18 +48,14 @@ function Insert_logs(query,IniFecha,FinFecha,MecLog,line, count){
 }
 
 function nullFecha(IniFecha,FinFecha){
-  ini=true
-  fin=true
   if(IniFecha = true){
     new sql.Request().query(
       "update MecanizadoLog set Inicio_Raspberry = null where Inicio_Raspberry = '1900-01-01 00:00:00.000'",  //String de la Query
         (err, result) => {
       if(err) { 
         console.log("Motivo de error: "+ err);
-        ini=false
       }
       else{
-        ini=true
         //console.log("Ingresado Correctamente");
       }
     });
@@ -72,37 +66,26 @@ function nullFecha(IniFecha,FinFecha){
         (err, result) => {
       if(err) { 
         console.log("Motivo de error: "+ err);
-        fin=false
       }
       else{
-        ini = true
         //console.log("Ingresado Correctamente");
       }
     });
   }
 }
 
-/*module.exports = function Conectar(MecLog,IniFecha,FinFecha,line, count){
+module.exports = function Conectar(MecLog,IniFecha,FinFecha,line, count){
+ 
   sql.connect(config, function (err) {
-    if (err) { console.log(JSON.stringify(err)+'..............') 
-    return false}
+    if (err) { console.log(JSON.stringify(err)+'..............') }
     else {
       try{
-        console.log(MecLog)
-         estado= Insert_logs(GeneretQuery(MecLog),IniFecha,FinFecha,MecLog,line,count)
-         console.log(estado)
-         return estado
+       Insert_logs(GeneretQuery(MecLog),IniFecha,FinFecha,MecLog,line,count)
       }
       catch(err){
-        console.log("Error" +'\n'+MecLog)
-        return false
+        console.log("Error" +'\n'+err)
       }
     }
   }
   );
-}*/
-
-
-module.exports = function Conectar(MecLog,IniFecha,FinFecha,line, count){
-  return true
 }

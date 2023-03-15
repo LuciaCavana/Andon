@@ -33,9 +33,9 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
-            case 'CYCLE_END':
+        case 'CYCLE_END':
             //2022-11-15 07:20:18,192.168.24.50:57724:,2021-10-26 10:27:53.804,CYCLE_END,ME853,91138-20,1709,2021-10-26 10:20:13.881,2021-10-26 10:27:53.803
             
             MecLog.setFecha_Hora(aArray[0].replace(" ","T"))
@@ -50,7 +50,7 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = false
             FinFecha = false
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
         case 'CYCLE_START':
             //[2022-11-15 07:27:23] 192.168.24.82:39728: 2021-10-23 14:28:28.619,CYCLE_START,ME234,97311-40,990577,2021-10-23 14:28:28.619
@@ -83,7 +83,7 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = false
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break; 
         case 'PARTOPREG_OK':
             //[2022-11-15 07:16:45] 192.168.24.55:37932: 2021-06-09 02:22:10.057,PARTOPREG_OK,ME855,26001-00-010,1576
@@ -104,7 +104,7 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
         case 'PRODUCCION NO CONFORME':
             break; 
@@ -122,7 +122,7 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
         case 'SCAN':
 
@@ -165,7 +165,7 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
         case 'SYS_READY':
             //[2022-11-15 07:08:52] 192.168.24.82:49576: 2021-10-23 14:17:18.501,SYS_READY,ME234
@@ -181,7 +181,7 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break; 
         case 'SYS_START':
             //[2022-11-15 11:11:04] 192.168.24.56:44546: 2021-11-15 15:17:18.671,SYS_START
@@ -197,7 +197,7 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;         
         case 'MACHINE_ENABLE':
             //[2022-11-15 14:56:55] 192.168.24.52:56602: 2021-12-23 00:22:11.717,MACHINE_ENABLE,ME062
@@ -214,7 +214,7 @@ function EventDetect(event, aArray,line,count) {
     
                 IniFecha = true
                 FinFecha = true
-                //DataBase(MecLog,IniFecha,FinFecha,line,count)
+                DataBase(MecLog,IniFecha,FinFecha,line,count)
             }
             catch(error){
                 console.log(err + '\n'+line)
@@ -262,7 +262,7 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
         case 'MACHINE_FAILURE':
             //Log: 2022-11-12 08:49:09,192.168.24.55:50866:,2021-06-08 12:35:15.411,MACHINE_FAILURE,ME855
@@ -278,7 +278,7 @@ function EventDetect(event, aArray,line,count) {
 
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
 
             break;
         case 'MACHINE_MAINTENANCE':
@@ -295,7 +295,7 @@ function EventDetect(event, aArray,line,count) {
             
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
         case 'MACHINE_RAWMATERIALMISSING':
             //Log: 2022-11-11 07:12:08,192.168.24.83:49430:,2022-07-16 19:18:50.716,MACHINE_RAWMATERIALMISSING,ME131
@@ -311,7 +311,7 @@ function EventDetect(event, aArray,line,count) {
             
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
         case 'MACHINE_READY':
             //Log: 2022-11-12 08:49:37,192.168.24.55:50866:,2021-06-08 12:35:43.769,MACHINE_READY,ME8552021-06-08 12:35:43.769,COMMAND_OK,ME855,MACHREADY
@@ -327,7 +327,7 @@ function EventDetect(event, aArray,line,count) {
             
             IniFecha = true
             FinFecha = true
-            //DataBase(MecLog,IniFecha,FinFecha,line,count)
+            DataBase(MecLog,IniFecha,FinFecha,line,count)
             break;
         case 'MACHINE_SETUP':
             console.log("Formato de log no generado || Log: "+line)
@@ -359,9 +359,7 @@ function EventDetect(event, aArray,line,count) {
             break;
     }
 
-    if(error==false){
-       return DataBase(MecLog,IniFecha,FinFecha,line,count)
-    }
+    //if(error==false){DataBase(MecLog,IniFecha,FinFecha,line,count)}
 }
 
 
