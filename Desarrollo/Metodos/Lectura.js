@@ -3,18 +3,14 @@ const readline = require('readline');
 const fs = require('fs');
 
 var FuncionEvent = require('./FuncionEvent');
-var line = require('./Line')
-
-
+var gLine = require('./Line');
 
 pos = 11
 pos2 = 51
 
 //FUNCION LECTURA DE LOGS 
 
-function LecturaLogs(url,tline){
-    
-    c = tLine
+function LecturaLogs(url,num){
     // Abre un stream de lectura para el archivo
     const fileStream = fs.createReadStream(url);
     
@@ -23,9 +19,11 @@ function LecturaLogs(url,tline){
         input: fileStream,
         crlfDelay: Infinity
     });
+
     
     // Contador para el número de líneas leídas
     lineCount = 0;
+    c= num
     
 
     // Escucha el evento "line" para leer cada línea
@@ -55,17 +53,15 @@ function LecturaLogs(url,tline){
 
                             aMecanizado = string.split(",")
                             
-                            //console.log(aMecanizado)
                            FuncionEvent.EventDetect(aMecanizado[3],aMecanizado,string,lineCount)
                         
                     }
                 }            
             }
             //Guarda en tLine la ultima linea
-            tLine = lineCount
+            
+            if(lineCount>num){gLine.GuardarLinea(lineCount)}
         });
-        
-        line.GuardarLinea(tLine)
 
         readInterface.on('error', function(error) {
             console.error(error);
